@@ -73,14 +73,14 @@ app.get("/reserve", function(req, res) {
 //
 // // Create New Reservations - takes in JSON input
 app.post("/api/new", function(req, res) {
-  var newreservations = req.body;
-  newreservations.routeName = newreservations.customerName.replace(/\s+/g, "").toLowerCase();
+  var newreservation = req.body;
+  newreservation.routeName = newreservations.customerName.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newreservations);
+  console.log(newreservation);
 
-  reservations.push(newreservations);
+  reservations.push(newreservation);
 
-  res.json(newreservations);
+  res.json(newreservation);
 });
 
 // Starts the server to begin listening
@@ -88,3 +88,5 @@ app.post("/api/new", function(req, res) {
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+
+
